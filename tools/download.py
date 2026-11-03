@@ -8,6 +8,7 @@ url.txt: one line per report, format  company,year,direct_pdf_url
   paytm,fy2026,https://.../report.pdf
 Lines starting with # are skipped.
 """
+
 import csv
 import hashlib
 import pathlib
@@ -85,16 +86,18 @@ def rebuild_manifest(new_sources):
         key = p.as_posix()
         prev = old.get(key, {})
         data = p.read_bytes()
-        rows.append({
-            "file": key,
-            "company": p.parent.name,
-            "year": p.stem.split("_")[-1],
-            "source_url": new_sources.get(key) or prev.get("source_url", ""),
-            "pages": len(fitz.open(p)),
-            "bytes": len(data),
-            "sha256": hashlib.sha256(data).hexdigest()[:16],
-            "downloaded_on": prev.get("downloaded_on") or date.today().isoformat(),
-        })
+        rows.append(
+            {
+                "file": key,
+                "company": p.parent.name,
+                "year": p.stem.split("_")[-1],
+                "source_url": new_sources.get(key) or prev.get("source_url", ""),
+                "pages": len(fitz.open(p)),
+                "bytes": len(data),
+                "sha256": hashlib.sha256(data).hexdigest()[:16],
+                "downloaded_on": prev.get("downloaded_on") or date.today().isoformat(),
+            }
+        )
     MANIFEST.parent.mkdir(parents=True, exist_ok=True)
     with open(MANIFEST, "w", newline="", encoding="utf-8") as f:
         w = csv.DictWriter(f, fieldnames=FIELDS)

@@ -15,9 +15,11 @@ def health(settings: SettingsDep) -> dict:
     """Liveness: the process is up. Must be fast and must not call the LLM or the DB."""
     return {"status": "ok", "app": settings.app_name, "environment": settings.environment}
 
+
 @app.post("/llm/test")
 def llm_test(body: dict):
     return ask_llm(body.get("prompt", "Say hello"))
+
 
 @app.get("/usage")
 def usage():
