@@ -17,7 +17,7 @@ from datetime import date
 from urllib.parse import urlparse
 from urllib.robotparser import RobotFileParser
 
-import fitz  # pip install pymupdf
+import pymupdf as fitz
 import requests
 
 RAW = pathlib.Path("data/raw")

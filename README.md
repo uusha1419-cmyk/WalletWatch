@@ -20,11 +20,11 @@ I found this by running my test sets: questions that try to make the tool leak p
 
 | Source | Link | Documents | Pages | Licence / terms |
 |---|---|---|---|---|
-| One 97 Communications (Paytm) | https://ir.paytm.com/annual-reports | 4 | ~1,400 | Public filing on company investor page. No open licence stated. Used for academic, non-commercial study. Terms: https://paytm.com/company/terms-and-conditions |
-| PB Fintech (Policybazaar) | https://www.pbfintech.in/investor-relations/ | 4 | ~1,400 | Same wording. Terms: https://www.pbfintech.in/tnc.html |
-| One MobiKwik Systems | https://www.mobikwik.com/ir/ | 3 | ~900 | Same wording. Terms: https://www.mobikwik.com/termsandconditions |
-| Infibeam Avenues (AvenuesAI) | https://avenuesai.com/financial-results | 4 | ~1,200 | Same wording. Terms: https://www.ccavenue.com/terms-conditions |
-| **Total (target)** | | **15** | **~4,900** | |
+| One 97 Communications (Paytm) | https://ir.paytm.com/annual-reports | 4 | 1588 | Public filing on company investor page. No open licence stated. Used for academic, non-commercial study. Terms: https://paytm.com/company/terms-and-conditions |
+| PB Fintech (Policybazaar) | https://www.pbfintech.in/investor-relations/ | 3 | 581  | Same wording. Terms: https://www.pbfintech.in/tnc.html |
+| One MobiKwik Systems | https://www.mobikwik.com/ir/ | 4 | 912 | Same wording. Terms: https://www.mobikwik.com/termsandconditions |
+| Infibeam Avenues (AvenuesAI) | https://avenuesai.com/financial-results | 4 | 1324 | Same wording. Terms: https://www.ccavenue.com/terms-conditions |
+| **Total (target)** | | **15** | **4405** | |
 
 **Collected so far:** 1 report, 361 pages (Week 1, 23 Oct 2026). Target: 14+ reports, 4,000+ pages.
 

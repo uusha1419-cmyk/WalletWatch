@@ -1,1 +1,16 @@
-data/raw/paytm/paytm_ar_fy2026.pdf,paytm,fy2026,https://ir.paytm.com/annual-reports,361,9525698,9d2559acd8127657,2026-10-23
+file,company,year,source_url,pages,bytes,sha256,downloaded_on
+data/raw/infibeam/infibeam_ar_fy2023.pdf,infibeam,fy2023,https://avenuesai.com/financial-results,319,24752998,3299402813ca7bc9,2026-11-03
+data/raw/infibeam/infibeam_ar_fy2024.pdf,infibeam,fy2024,https://avenuesai.com/financial-results,312,6753731,a6753c8198a1f03b,2026-11-03
+data/raw/infibeam/infibeam_ar_fy2025.pdf,infibeam,fy2025,https://avenuesai.com/financial-results,335,10899350,30cccec297019943,2026-11-03
+data/raw/infibeam/infibeam_ar_fy2026.pdf,infibeam,fy2026,https://avenuesai.com/financial-results,358,5718119,267a645368232c73,2026-11-03
+data/raw/mobikwik/mobikwik_ar_fy2020-21.pdf,mobikwik,fy2020-21,https://www.mobikwik.com/ir/annual-report,182,4826928,e8991a1f372db6de,2026-11-03
+data/raw/mobikwik/mobikwik_ar_fy2021-22.pdf,mobikwik,fy2021-22,https://www.mobikwik.com/ir/annual-report,169,7094062,010858004464c82b,2026-11-03
+data/raw/mobikwik/mobikwik_ar_fy24-25.pdf,mobikwik,fy24-25,https://www.mobikwik.com/ir/annual-report,247,8114244,6252f4edec1516e7,2026-11-03
+data/raw/mobikwik/mobikwik_ar_fy25-26.pdf,mobikwik,fy25-26,https://www.mobikwik.com/ir/annual-report,314,5521997,821f72cac989a4cb,2026-11-03
+data/raw/paytm/paytm_ar_fy2023.pdf,paytm,fy2023,https://ir.paytm.com/annual-reports,468,5083543,50b3784e2f8bb6d8,2026-11-03
+data/raw/paytm/paytm_ar_fy2024.pdf,paytm,fy2024,https://ir.paytm.com/annual-reports,416,3683289,ba61dd0e01866ddc,2026-11-03
+data/raw/paytm/paytm_ar_fy2025.pdf,paytm,fy2025,https://ir.paytm.com/annual-reports,343,3314736,f65053f1cba594a9,2026-11-03
+data/raw/paytm/paytm_ar_fy2026.pdf,paytm,fy2026,https://ir.paytm.com/annual-reports,361,9525698,9d2559acd8127657,2026-11-03
+data/raw/pbfintech/pbfintech_ar_fy2025.pdf,pbfintech,fy2025,https://www.pbfintech.in/investor-relations/,190,98885830,55ec4533fdfcf2dd,2026-11-03
+data/raw/pbfintech/pbfintech_ar_fy2026.pdf,pbfintech,fy2026,https://www.pbfintech.in/investor-relations/,220,63513794,2c25aef55c952abc,2026-11-03
+data/raw/pbfintech/pbfintech_ar_fy23-24.pdf,pbfintech,fy23-24,https://www.pbfintech.in/investor-relations/,171,112776840,3b7f11c4f08ff996,2026-11-03
