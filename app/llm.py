@@ -110,3 +110,32 @@ def chat(message: str) -> dict:
         "input_tokens": tin,
         "output_tokens": tout,
     }
+
+
+STREAM_CONFIG = types.GenerateContentConfig(system_instruction=SYSTEM)
+
+
+def chat_stream(message: str):
+    """Yield text chunks. Falls back only if a model fails before sending anything."""
+    for model in (PRIMARY, FALLBACK):
+        started = False
+        meta = None
+        try:
+            for chunk in client().models.generate_content_stream(
+                model=model, contents=message, config=STREAM_CONFIG
+            ):
+                if chunk.usage_metadata:
+                    meta = chunk.usage_metadata
+                if chunk.text:
+                    started = True
+                    yield chunk.text
+            _record(model, meta or object())
+            if model == FALLBACK:
+                USAGE["fallbacks"] += 1
+            return
+        except Exception as e:
+            print(f"{model} stream failed: {e}")
+            if started:
+                yield "\n[stream interrupted]"
+                return
+    yield "[LLM unavailable, try again]"

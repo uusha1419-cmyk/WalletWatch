@@ -1,9 +1,10 @@
 from typing import Annotated
 
 from fastapi import Depends, FastAPI, HTTPException
+from fastapi.responses import StreamingResponse
 
 from app.config import Settings, get_settings
-from app.llm import USAGE, ask_llm, chat
+from app.llm import USAGE, ask_llm, chat, chat_stream
 from app.schemas import ChatRequest, ChatResponse
 
 app = FastAPI(title="Examate RAG starter", version="0.1.0")
@@ -33,3 +34,8 @@ def chat_endpoint(req: ChatRequest):
         return chat(req.message)
     except RuntimeError as e:
         raise HTTPException(status_code=503, detail="LLM unavailable, try again") from e
+
+
+@app.post("/chat/stream")
+def chat_stream_endpoint(req: ChatRequest):
+    return StreamingResponse(chat_stream(req.message), media_type="text/plain; charset=utf-8")

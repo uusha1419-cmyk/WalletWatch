@@ -67,3 +67,24 @@ def test_chat_endpoint(monkeypatch):
     assert r.status_code == 200
     assert r.json()["confidence"] == "low"
     assert TestClient(main.app).post("/chat", json={"message": ""}).status_code == 422
+
+
+class Chunk:
+    def __init__(self, text, usage=None):
+        self.text = text
+        self.usage_metadata = usage
+
+
+def test_stream_falls_back_before_first_chunk(monkeypatch):
+    class Models:
+        def generate_content_stream(self, model, contents, config=None):
+            if model == llm.PRIMARY:
+                raise RuntimeError("boom")
+            return iter([Chunk("Hel"), Chunk("lo", Meta())])
+
+    class C:
+        models = Models()
+
+    monkeypatch.setattr(llm, "client", lambda: C())
+    assert "".join(llm.chat_stream("hi")) == "Hello"
+    assert llm.USAGE["fallbacks"] >= 1
