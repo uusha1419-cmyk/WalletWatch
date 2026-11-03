@@ -3,12 +3,12 @@
 Commit after every class. Tag every Friday: `git tag week-N && git push origin week-N`.
 
 ## Week 1 (tag week-1 by Fri 23 Oct)
-- [ ] Repo created from the Examate template and registered on the form
-- [ ] README top section filled from my project card
-- [ ] /health runs locally
-- [ ] docs/QUESTIONS.md: 10 real questions
-- [ ] 50+ pages collected, DATASET.md filled, sample in data/sample/
-- [ ] Tag week-1 pushed
+- [X] Repo created from the Examate template and registered on the form
+- [X] README top section filled from my project card
+- [X] /health runs locally
+- [X] docs/QUESTIONS.md: 10 real questions
+- [X] 50+ pages collected, DATASET.md filled, sample in data/sample/
+- [X] Tag week-1 pushed
 
 ## Week 2 (tag week-2 by Fri 30 Oct)
 - [ ] POST /chat calls an LLM and returns structured JSON
