@@ -1,8 +1,10 @@
-from dotenv import load_dotenv
-load_dotenv()
-from google.genai import types
 import os
+
+from dotenv import load_dotenv
 from google import genai
+from google.genai import types
+
+load_dotenv()
 
 PRIMARY = os.getenv("GEMINI_MODEL", "gemini-3.7-flash")
 FALLBACK = os.getenv("GEMINI_FALLBACK_MODEL", "gemini-2.5-flash")

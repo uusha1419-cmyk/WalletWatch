@@ -1,9 +1,9 @@
-from app.llm import ask_llm, USAGE
 from typing import Annotated
 
 from fastapi import Depends, FastAPI
 
 from app.config import Settings, get_settings
+from app.llm import USAGE, ask_llm
 
 app = FastAPI(title="Examate RAG starter", version="0.1.0")
 
