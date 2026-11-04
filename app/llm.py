@@ -5,6 +5,7 @@ from dotenv import load_dotenv
 from google import genai
 from google.genai import types
 
+from app import db
 from app.schemas import ChatAnswer
 
 load_dotenv()
@@ -54,10 +55,12 @@ def _record(model, meta):
     tin = getattr(meta, "prompt_token_count", 0) or 0
     tout = getattr(meta, "candidates_token_count", 0) or 0
     p_in, p_out = PRICES[model]
+    cost = (tin * p_in + tout * p_out) / 1_000_000
     USAGE["calls"] += 1
     USAGE["input_tokens"] += tin
     USAGE["output_tokens"] += tout
-    USAGE["cost_usd"] += (tin * p_in + tout * p_out) / 1_000_000
+    USAGE["cost_usd"] += cost
+    db.log_usage(model, tin, tout, cost)
     return tin, tout
 
 

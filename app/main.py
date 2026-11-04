@@ -3,6 +3,7 @@ from typing import Annotated
 from fastapi import Depends, FastAPI, HTTPException
 from fastapi.responses import StreamingResponse
 
+from app import db
 from app.config import Settings, get_settings
 from app.llm import USAGE, ask_llm, chat, chat_stream
 from app.schemas import ChatRequest, ChatResponse
@@ -25,7 +26,7 @@ def llm_test(body: dict):
 
 @app.get("/usage")
 def usage():
-    return USAGE
+    return {**USAGE, "persistent": db.totals()}
 
 
 @app.post("/chat", response_model=ChatResponse)
